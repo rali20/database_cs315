@@ -60,12 +60,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
     <a href="home" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Overview</a>
     <a href="doctors" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user-md fa-fw"></i> Doctors</a>
-    <a href="dept" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Departments</a>
-    <a href="employee" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i> Employees</a>
-    <a href="appointments" class="w3-bar-item w3-button w3-padding"><i class="fa fa-diamond fa-fw"></i>  Appointments</a>
-    <a href="desig" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i> Designations</a>
-    <a href="inventory" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>  Inventory</a>
-    <a href="insurance" class="w3-bar-item w3-button w3-padding"><i class="fa fa-history fa-fw"></i>  Insurance</a>
+    <a href="dept" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Departments</a>
+    <a href="employee" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i> Employees</a>
+    <a href="appointments" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Appointments</a>
+    <a href="desig" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i> Designations</a>
+    <a href="inventory" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Inventory</a>
+    <a href="insurance" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Insurance</a>
     <a href="patients" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i> Patients</a>
     <a href="library" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i> Library</a>
     <a href="visitor" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i> Visitors</a>
@@ -106,24 +106,27 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 
 <div class="w3-container">
+
   {% block content1 %}{% endblock content1 %}
+
 </div>
 
-{% if 'home' in request.url %}
 
-{% elif 'login' in request.url %}
+{% if 'login' in request.url %}
 
 {% elif 'register' in request.url %}
 
 {% else %}
-<div class="w3-container">
-  <h5>Data</h5>
-  {% block content2 %}{% endblock content2 %}
-  <button class="w3-button w3-dark-grey">More Countries  <i class="fa fa-arrow-right"></i></button>
-</div>
+  {% if current_user.is_authenticated %}
+    <div class="w3-container" >
+      <h5>Data</h5>
+      {% block content2 %}{% endblock content2 %}
+      <button class="w3-button w3-dark-grey">More  <i class="fa fa-arrow-right"></i></button>
+    </div>
+  {% endif %}
 {% endif %}
   <br>
-  <div class="w3-container w3-dark-grey w3-padding-32">
+  <div class="w3-main w3-container w3-dark-grey w3-padding-32">
     <div class="w3-row">
       <div class="w3-container w3-half">
         <h5 class="w3-bottombar w3-border-red">About Us</h5>
@@ -132,16 +135,18 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       </div>
       <div class="w3-container w3-half">
         <h5 class="w3-bottombar w3-border-green">Hospital DB Design</h5>
+        <a href="https://docs.google.com/document/d/1OLduHWDLhzExscoFO4Ka8CNCN3Ay8YCR8Fr1M7qQ3A4/edit">
         <p>Report</p>
+      </a>
+      <a href="https://imgur.com/t9ZxZ0J">
         <p>ER Diagram</p>
+      </a>
       </div>
     </div>
   </div>
 
   <!-- Footer -->
-  <footer class="w3-container w3-padding-16 w3-light-grey">
-    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-  </footer>
+
 
   <!-- End page content -->
 </div>

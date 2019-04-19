@@ -9,11 +9,12 @@
 
  {% for eresult in eresults %}
 <form action = "student_doc_edit2" method = "POST">
-	<p>Roll No<input class="form-control" type = "text" name = "roll_no" style='width: 100%;' value='{{eresult["roll_no"]}}' /></p>
-	<p>Doctor Id<input class="form-control" type = "text" name = "doctor_id" style='width: 100%;' value='{{eresult["doctor_id"]}}' /></p>
-	<p>Term<input class="form-control" type = "text" name = "term" style='width: 100%;' value='{{eresult["term"]}}' /></p>
-	<p>Field<input class="form-control" type = "text" name = "field" style='width: 100%;' value='{{eresult["field"]}}'  maxlength="20"/></p>
-	<p>Department Id<input class="form-control" type = "text" name = "dept_id" style='width: 100%;' value='{{eresult["dept_id"]}}' /></p>
+	<p>Roll No<input class="form-control" type = "text" name = "roll_no" style='width: 100%;' value='{{eresult["roll_no"]}}' required /></p>
+	<p>Doctor Id<input class="form-control" type = "text" name = "doctor_id" style='width: 100%;' value='{{eresult["doctor_id"]}}' required /></p>
+	<p>Term<input class="form-control" type = "text" name = "term" style='width: 100%;' value='{{eresult["term"]}}'
+	 required /></p>
+	<p>Field<input class="form-control" type = "text" name = "field" style='width: 100%;' value='{{eresult["field"]}}'  maxlength="20" required /></p>
+	<p>Department Id<input class="form-control" type = "text" name = "dept_id" style='width: 100%;' value='{{eresult["dept_id"]}}' required /></p>
 	<p><input type = "hidden" name = "old_roll_no" value='{{eresult["roll_no"]}}' /></p>
 	<p><input type = "hidden" name = "old_doctor_id" value='{{eresult["doctor_id"]}}' /></p>
 {% endfor %}
@@ -31,11 +32,11 @@
   </div>
 
   <form action = "student_doc_insert" method = "POST">
-	<p>Roll No: <input class="form-control" type = "text" name = "roll_no" style='width: 100%;'/></p>
-	<p>Doctor Id: <input class="form-control" type = "text" name = "doctor_id" style='width: 100%;'/></p>
-	<p>Term: <input class="form-control" type = "text" name = "term" style='width: 100%;'/></p>
-	<p>Field: <input class="form-control" type = "text" name = "field" style='width: 100%;' maxlength="20" /></p>
-	<p>Department Id: <input class="form-control" type = "text" name = "dept_id" style='width: 100%;'/></p>
+	<p>Roll No: <input class="form-control" type = "text" name = "roll_no" style='width: 100%;' required /></p>
+	<p>Doctor Id: <input class="form-control" type = "text" name = "doctor_id" style='width: 100%;' required /></p>
+	<p>Term: <input class="form-control" type = "text" name = "term" style='width: 100%;' required /></p>
+	<p>Field: <input class="form-control" type = "text" name = "field" style='width: 100%;' maxlength="20" required /></p>
+	<p>Department Id: <input class="form-control" type = "text" name = "dept_id" style='width: 100%;' required /></p>
 	<p><input class="btn-primary" type = "submit" value = "Insert Data" /></p>
 </form>
 </div>

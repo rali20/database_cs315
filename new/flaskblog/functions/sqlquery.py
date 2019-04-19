@@ -37,6 +37,14 @@ def sql_insert_edit_delete(query):
     cur.execute(query)
     conn.commit()
 
+def sql_any_query(query):
+    cur = conn.cursor()
+    cur.execute(query)
+    rows = cur.fetchall()
+    names = rows[0].keys()
+    print("hello",names)
+    return names,rows
+
 # def sql_delete(query,var):
 #     cur = conn.cursor()
 #     cur.execute(query,var)

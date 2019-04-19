@@ -9,16 +9,19 @@
 
  {% for eresult in eresults %}
 <form action = "students_edit2" method = "POST">
-	<p>Roll No<input class="form-control" type = "text" name = "roll_no" style='width: 100%;' value='{{eresult["roll_no"]}}' /></p>
+	<p>Roll No<input class="form-control" type = "text" name = "roll_no" style='width: 100%;' value='{{eresult["roll_no"]}}'  required /></p>
 	<p>Name<input class="form-control" type = "text" name = "name" style='width: 100%;' value='{{eresult["name"]}}'
-		maxlength="30" /></p>
-	<p>Degree<input class="form-control" type = "text" name = "degree" style='width: 100%;' value='{{eresult["degree"]}}' maxlength="10" /></p>
-	<p>Year<input class="form-control" type = "text" name = "year" style='width: 100%;' value='{{eresult["year"]}}' /></p>
+		maxlength="30" required /></p>
+	<p>Degree<input class="form-control" type = "text" name = "degree" style='width: 100%;' value='{{eresult["degree"]}}' maxlength="10" required /></p>
+	<p>Year<input class="form-control" type = "text" name = "year" style='width: 100%;' value='{{eresult["year"]}}'
+	 required /></p>
 	<p>Sex  &nbsp <input type="radio" name="sex" value="1" checked> Male  &nbsp
 				  <input type="radio" name="sex" value="0" > Female<br></p>
-	<p>Phone<input class="form-control" type = "text" name = "phone" style='width: 100%;' value='{{eresult["phone"]}}' /></p>
-	<p>DOB<input class="form-control" type = "date" name = "dob" style='width: 100%;' value='{{eresult["dob"]}}' /></p>
-	<p>Address<input class="form-control" type = "text" name = "address" style='width: 100%;' value='{{eresult["address"]}}' maxlength="100" /></p>
+	<p>Phone<input class="form-control" type = "text" name = "phone" style='width: 100%;' value='{{eresult["phone"]}}'
+		required/></p>
+	<p>DOB<input class="form-control" type = "date" name = "dob" style='width: 100%;' value='{{eresult["dob"]}}'
+		required /></p>
+	<p>Address<input class="form-control" type = "text" name = "address" style='width: 100%;' value='{{eresult["address"]}}' maxlength="100"  required /></p>
 	<p><input type = "hidden" name = "old_roll_no" value='{{eresult["roll_no"]}}' /></p>
 {% endfor %}
 
@@ -36,14 +39,16 @@
 
   <form action = "students_insert" method = "POST">
 	<p>Roll No: <input class="form-control" type = "text" name = "roll_no" style='width: 100%;' required/></p>
-	<p>Name: <input class="form-control" type = "text" name = "name" style='width: 100%;' maxlength="30" /></p>
-	<p>Degree: <input class="form-control" type = "text" name = "degree" style='width: 100%;' maxlength="10"/></p>
-	<p>Year: <input class="form-control" type = "text" name = "year" style='width: 100%;'/></p>
+	<p>Name: <input class="form-control" type = "text" name = "name" style='width: 100%;' maxlength="30" required /></p>
+	<p>Degree: <input class="form-control" type = "text" name = "degree" style='width: 100%;' maxlength="10"
+		required/></p>
+	<p>Year: <input class="form-control" type = "text" name = "year" style='width: 100%;' required /></p>
 	<p>Sex  &nbsp <input type="radio" name="sex" value="1" checked> Male  &nbsp
 		<input type="radio" name="sex" value="0" > Female<br></p>
-	<p>Phone: <input class="form-control" type = "text" name = "phone" style='width: 100%;'/></p>
-	<p>DOB: <input class="form-control" type = "date" name = "dob" style='width: 100%;'/></p>
-	<p>Address: <input class="form-control" type = "text" name = "address" style='width: 100%;' maxlength="100"/></p>
+	<p>Phone: <input class="form-control" type = "text" name = "phone" style='width: 100%;' required /></p>
+	<p>DOB: <input class="form-control" type = "date" name = "dob" style='width: 100%;' required /></p>
+	<p>Address: <input class="form-control" type = "text" name = "address" style='width: 100%;' maxlength="100"
+		required /></p>
 	<p><input class="btn-primary" type = "submit" value = "Insert Data" /></p>
 </form>
 </div>

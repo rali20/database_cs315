@@ -9,10 +9,10 @@
 
  {% for eresult in eresults %}
 <form action = "dept_edit2" method = "POST">
-	<p>Department Id<input class="form-control" type = "text" name = "dept_id" style='width: 100%;' value='{{eresult["dept_id"]}}' /></p>
-	<p>Name<input class="form-control" type = "text" name = "name" style='width: 100%;' value='{{eresult["name"]}}' 
-  maxlength="30" /></p>
-	<p>Doctor Id<input class="form-control" type = "text" name = "doctor_id" style='width: 100%;' value='{{eresult["doctor_id"]}}' /></p>
+	<p>Department Id<input class="form-control" type = "text" name = "dept_id" style='width: 100%;' value='{{eresult["dept_id"]}}' required /></p>
+	<p>Name<input class="form-control" type = "text" name = "name" style='width: 100%;' value='{{eresult["name"]}}'
+  maxlength="30"  required /></p>
+	<p>Doctor Id<input class="form-control" type = "text" name = "doctor_id" style='width: 100%;' value='{{eresult["doctor_id"]}}' required /></p>
 	<p><input type = "hidden" name = "old_dept_id" value='{{eresult["dept_id"]}}' /></p>
 {% endfor %}
 
@@ -29,9 +29,9 @@
   </div>
 
   <form action = "dept_insert" method = "POST">
-	<p>Department Id: <input class="form-control" type = "text" name = "dept_id" style='width: 100%;'/></p>
-	<p>Name: <input class="form-control" type = "text" name = "name" style='width: 100%;' maxlength="30"/></p>
-	<p>Doctor Id: <input class="form-control" type = "text" name = "doctor_id" style='width: 100%;'/></p>
+	<p>Department Id: <input class="form-control" type = "text" name = "dept_id" style='width: 100%;' required /></p>
+	<p>Name: <input class="form-control" type = "text" name = "name" style='width: 100%;' maxlength="30" required /></p>
+	<p>Doctor Id: <input class="form-control" type = "text" name = "doctor_id" style='width: 100%;' required /></p>
 	<p><input class="btn-primary" type = "submit" value = "Insert Data" /></p>
 </form>
 </div>

@@ -10,6 +10,15 @@ from flask import Flask
 def home():
     return render_template('home.html', page="Home")
 
+@app.route('/home_query',methods = ['POST']) #this is when user submits an insert
+def home_query():
+    from flaskblog.functions.sqlquery import sql_any_query
+    query=""
+    if request.method == 'POST':
+        query = request.form['query']
+    columns,rows = sql_any_query(query)
+    return render_template('home.html', columns=columns, rows=rows)
+
 
 @app.route("/about")
 def about():

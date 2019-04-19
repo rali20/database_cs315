@@ -9,9 +9,9 @@
 
  {% for eresult in eresults %}
 <form action = "lib_issued_edit2" method = "POST">
-	<p>Issue Date<input class="form-control" type = "date" name = "issue_date" style='width: 100%;' value='{{eresult["issue_date"]}}' /></p>
-	<p>Book Id<input class="form-control" type = "text" name = "book_id" style='width: 100%;' value='{{eresult["book_id"]}}' /></p>
-	<p>Return Status<input class="form-control" type = "text" name = "return_status" style='width: 100%;' value='{{eresult["return_status"]}}' /></p>
+	<p>Issue Date<input class="form-control" type = "date" name = "issue_date" style='width: 100%;' value='{{eresult["issue_date"]}}' required /></p>
+	<p>Book Id<input class="form-control" type = "text" name = "book_id" style='width: 100%;' value='{{eresult["book_id"]}}' required /></p>
+	<p>Return Status<input class="form-control" type = "text" name = "return_status" style='width: 100%;' value='{{eresult["return_status"]}}' required /></p>
 	<p>Return Date<input class="form-control" type = "date" name = "return_date" style='width: 100%;' value='{{eresult["return_date"]}}' /></p>
 	<p>Doctor Id<input class="form-control" type = "text" name = "doctor_id" style='width: 100%;' value='{{eresult["doctor_id"]}}' /></p>
 	<p>Roll No<input class="form-control" type = "text" name = "roll_no" style='width: 100%;' value='{{eresult["roll_no"]}}' /></p>

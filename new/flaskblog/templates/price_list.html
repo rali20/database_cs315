@@ -9,10 +9,11 @@
 
  {% for eresult in eresults %}
 <form action = "price_list_edit2" method = "POST">
-	<p>Price List Id<input class="form-control" type = "text" name = "price_list_id" style='width: 100%;' value='{{eresult["price_list_id"]}}' /></p>
-	<p>Category<input class="form-control" type = "text" name = "category" style='width: 100%;' value='{{eresult["category"]}}' /></p>
-	<p>Price<input class="form-control" type = "text" name = "price" style='width: 100%;' value='{{eresult["price"]}}' /></p>
-	<p>Description<input class="form-control" type = "text" name = "desc" style='width: 100%;' value='{{eresult["desc"]}}' maxlength="30" /></p>
+	<p>Price List Id<input class="form-control" type = "text" name = "price_list_id" style='width: 100%;' value='{{eresult["price_list_id"]}}'  required /></p>
+	<p>Category<input class="form-control" type = "text" name = "category" style='width: 100%;' value='{{eresult["category"]}}'  required /></p>
+	<p>Price<input class="form-control" type = "text" name = "price" style='width: 100%;' value='{{eresult["price"]}}'
+		required /></p>
+	<p>Description<input class="form-control" type = "text" name = "desc" style='width: 100%;' value='{{eresult["desc"]}}' maxlength="30" required /></p>
 	<p><input type = "hidden" name = "old_price_list_id" value='{{eresult["price_list_id"]}}' /></p>
 {% endfor %}
 
@@ -29,11 +30,11 @@
   </div>
 
   <form action = "price_list_insert" method = "POST">
-	<p>Price List Id: <input class="form-control" type = "text" name = "price_list_id" style='width: 100%;'/></p>
-	<p>Category: <input class="form-control" type = "text" name = "category" style='width: 100%;'/></p>
-	<p>Price: <input class="form-control" type = "text" name = "price" style='width: 100%;'/></p>
+	<p>Price List Id: <input class="form-control" type = "text" name = "price_list_id" style='width: 100%;' required /></p>
+	<p>Category: <input class="form-control" type = "text" name = "category" style='width: 100%;' required /></p>
+	<p>Price: <input class="form-control" type = "text" name = "price" style='width: 100%;' required /></p>
 	<p>Description: <input class="form-control" type = "text" name = "desc" style='width: 100%;'
-		maxlength="30" /></p>
+		maxlength="30" required /></p>
 	<p><input class="btn-primary" type = "submit" value = "Insert Data" /></p>
 </form>
 </div>

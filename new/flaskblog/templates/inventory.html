@@ -9,11 +9,11 @@
 
  {% for eresult in eresults %}
 <form action = "inventory_edit2" method = "POST">
-	<p>Equipment Id<input class="form-control" type = "text" name = "equip_id" style='width: 100%;' value='{{eresult["equip_id"]}}' /></p>
-	<p>Department Id<input class="form-control" type = "text" name = "dept_id" style='width: 100%;' value='{{eresult["dept_id"]}}' /></p>
+	<p>Equipment Id<input class="form-control" type = "text" name = "equip_id" style='width: 100%;' value='{{eresult["equip_id"]}}' required /></p>
+	<p>Department Id<input class="form-control" type = "text" name = "dept_id" style='width: 100%;' value='{{eresult["dept_id"]}}' required /></p>
 	<p>Name<input class="form-control" type = "text" name = "name" style='width: 100%;' value='{{eresult["name"]}}'
-	maxlength="20" /></p>
-	<p>Quantity<input class="form-control" type = "text" name = "quantity" style='width: 100%;' value='{{eresult["quantity"]}}' /></p>
+	maxlength="20"  required /></p>
+	<p>Quantity<input class="form-control" type = "text" name = "quantity" style='width: 100%;' value='{{eresult["quantity"]}}' required /></p>
 	<p><input type = "hidden" name = "old_equip_id" value='{{eresult["equip_id"]}}' /></p>
 	<p><input type = "hidden" name = "old_dept_id" value='{{eresult["dept_id"]}}' /></p>
 {% endfor %}

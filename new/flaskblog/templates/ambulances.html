@@ -9,11 +9,11 @@
 
  {% for eresult in eresults %}
 <form action = "ambulances_edit2" method = "POST">
-	<p>Vehicle No<input class="form-control" type = "text" name = "vehicle_no" style='width: 100%;' value='{{eresult["vehicle_no"]}}' /></p>
-	<p>Employee Id<input class="form-control" type = "text" name = "emp_id" style='width: 100%;' value='{{eresult["emp_id"]}}' /></p>
-	<p>Model Name<input class="form-control" type = "text" name = "model_name" style='width: 100%;' value='{{eresult["model_name"]}}' maxlength="20" /></p>
-	<p>Type<input class="form-control" type = "text" name = "type" style='width: 100%;' value='{{eresult["type"]}}' 
-		maxlength="20"/></p>
+	<p>Vehicle No<input class="form-control" type = "text" name = "vehicle_no" style='width: 100%;' value='{{eresult["vehicle_no"]}}' required /></p>
+	<p>Employee Id<input class="form-control" type = "text" name = "emp_id" style='width: 100%;' value='{{eresult["emp_id"]}}'  required /></p>
+	<p>Model Name<input class="form-control" type = "text" name = "model_name" style='width: 100%;' value='{{eresult["model_name"]}}' maxlength="20" required /></p>
+	<p>Type<input class="form-control" type = "text" name = "type" style='width: 100%;' value='{{eresult["type"]}}'
+		maxlength="20" required /></p>
 	<p><input type = "hidden" name = "old_vehicle_no" value='{{eresult["vehicle_no"]}}' /></p>
 	<p><input type = "hidden" name = "old_emp_id" value='{{eresult["emp_id"]}}' /></p>
 {% endfor %}
@@ -31,10 +31,11 @@
   </div>
 
   <form action = "ambulances_insert" method = "POST">
-	<p>Vehicle No: <input class="form-control" type = "text" name = "vehicle_no" style='width: 100%;'/></p>
-	<p>Employee Id: <input class="form-control" type = "text" name = "emp_id" style='width: 100%;'/></p>
-	<p>Model Name: <input class="form-control" type = "text" name = "model_name" style='width: 100%;' maxlength="20" /></p>
-	<p>Type: <input class="form-control" type = "text" name = "type" style='width: 100%;' maxlength="20" /></p>
+	<p>Vehicle No: <input class="form-control" type = "text" name = "vehicle_no" style='width: 100%;' required /></p>
+	<p>Employee Id: <input class="form-control" type = "text" name = "emp_id" style='width: 100%;' required /></p>
+	<p>Model Name: <input class="form-control" type = "text" name = "model_name" style='width: 100%;' maxlength="20"
+		required /></p>
+	<p>Type: <input class="form-control" type = "text" name = "type" style='width: 100%;' maxlength="20" required /></p>
 	<p><input class="btn-primary" type = "submit" value = "Insert Data" /></p>
 </form>
 </div>

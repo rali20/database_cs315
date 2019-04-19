@@ -9,10 +9,10 @@
 
  {% for eresult in eresults %}
 <form action = "library_edit2" method = "POST">
-	<p>Book Id<input class="form-control" type = "text" name = "book_id" style='width: 100%;' value='{{eresult["book_id"]}}' /></p>
-	<p>Book Name<input class="form-control" type = "text" name = "book_name" style='width: 100%;' value='{{eresult["book_name"]}}' maxlength="30" /></p>
-	<p>Edition<input class="form-control" type = "text" name = "edition" style='width: 100%;' value='{{eresult["edition"]}}' /></p>
-	<p>Quantity<input class="form-control" type = "text" name = "quantity" style='width: 100%;' value='{{eresult["quantity"]}}' /></p>
+	<p>Book Id<input class="form-control" type = "text" name = "book_id" style='width: 100%;' value='{{eresult["book_id"]}}' required /></p>
+	<p>Book Name<input class="form-control" type = "text" name = "book_name" style='width: 100%;' value='{{eresult["book_name"]}}' maxlength="30" required /></p>
+	<p>Edition<input class="form-control" type = "text" name = "edition" style='width: 100%;' value='{{eresult["edition"]}}' required /></p>
+	<p>Quantity<input class="form-control" type = "text" name = "quantity" style='width: 100%;' value='{{eresult["quantity"]}}' required /></p>
 	<p><input type = "hidden" name = "old_book_id" value='{{eresult["book_id"]}}' /></p>
 {% endfor %}
 
@@ -29,12 +29,12 @@
   </div>
 
   <form action = "library_insert" method = "POST">
-	<p>Book Id: <input class="form-control" type = "text" name = "book_id" style='width: 100%;'/></p>
-	<p>Book Name: <input class="form-control" type = "text" name = "book_name" style='width: 100%;' 
-		maxlength="30" /></p>
-	<p>Edition: <input class="form-control" type = "text" name = "edition" style='width: 100%;'/></p>
-	<p>Quantity: <input class="form-control" type = "text" name = "quantity" style='width: 100%;'/></p>
-	<p><input class="btn-primary" type = "submit" value = "Insert Data" /></p>
+	<p>Book Id: <input class="form-control" type = "text" name = "book_id" style='width: 100%;' required /></p>
+	<p>Book Name: <input class="form-control" type = "text" name = "book_name" style='width: 100%;'
+		maxlength="30" required /></p>
+	<p>Edition: <input class="form-control" type = "text" name = "edition" style='width: 100%;' required /></p>
+	<p>Quantity: <input class="form-control" type = "text" name = "quantity" style='width: 100%;' required /></p>
+	<p><input class="btn-primary" type = "submit" value = "Insert Data" required /></p>
 </form>
 </div>
 

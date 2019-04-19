@@ -9,14 +9,16 @@
 
  {% for eresult in eresults %}
 <form action = "patients_edit2" method = "POST">
-	<p>Patient Id<input class="form-control" type = "text" name = "patient_id" style='width: 100%;' value='{{eresult["patient_id"]}}' /></p>
+	<p>Patient Id<input class="form-control" type = "text" name = "patient_id" style='width: 100%;' value='{{eresult["patient_id"]}}' required /></p>
 	<p>Name<input class="form-control" type = "text" name = "name" style='width: 100%;' value='{{eresult["name"]}}'
-		maxlength="30" /></p>
+		maxlength="30" required /></p>
 	<p>Sex  &nbsp <input type="radio" name="sex" value="1" checked> Male  &nbsp
 				  <input type="radio" name="sex" value="0" > Female<br></p>
-	<p>Phone<input class="form-control" type = "text" name = "phone" style='width: 100%;' value='{{eresult["phone"]}}' /></p>
-	<p>DOB<input class="form-control" type = "date" name = "dob" style='width: 100%;' value='{{eresult["dob"]}}' /></p>
-	<p><input type = "hidden" name = "old_patient_id" value='{{eresult["patient_id"]}}' /></p>
+	<p>Phone<input class="form-control" type = "text" name = "phone" style='width: 100%;' value='{{eresult["phone"]}}'
+		required /></p>
+	<p>DOB<input class="form-control" type = "date" name = "dob" style='width: 100%;' value='{{eresult["dob"]}}'
+	 required /></p>
+	<p><input type = "hidden" name = "old_patient_id" value='{{eresult["patient_id"]}}'  /></p>
 {% endfor %}
 
    <br>
@@ -32,12 +34,12 @@
   </div>
 
   <form action = "patients_insert" method = "POST">
-	<p>Patient Id: <input class="form-control" type = "text" name = "patient_id" style='width: 100%;'/></p>
-	<p>Name: <input class="form-control" type = "text" name = "name" style='width: 100%;' maxlength="30"/></p>
+	<p>Patient Id: <input class="form-control" type = "text" name = "patient_id" style='width: 100%;' required /></p>
+	<p>Name: <input class="form-control" type = "text" name = "name" style='width: 100%;' maxlength="30" required /></p>
 	<p>Sex: &nbsp <input type="radio" name="sex" value="1" checked> Male &nbsp
 		<input type="radio" name="sex" value="0" > Female<br></p></p>
-	<p>Phone: <input class="form-control" type = "text" name = "phone" style='width: 100%;'/></p>
-	<p>DOB: <input class="form-control" type = "date" name = "dob" style='width: 100%;'/></p>
+	<p>Phone: <input class="form-control" type = "text" name = "phone" style='width: 100%;' required /></p>
+	<p>DOB: <input class="form-control" type = "date" name = "dob" style='width: 100%;' required /></p>
 	<p><input class="btn-primary" type = "submit" value = "Insert Data" /></p>
 </form>
 </div>

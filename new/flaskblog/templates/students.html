@@ -9,16 +9,16 @@
 
  {% for eresult in eresults %}
 <form action = "students_edit2" method = "POST">
-	<p>roll_no<input class="form-control" type = "text" name = "roll_no" style='width: 100%;' value='{{eresult["roll_no"]}}' /></p>
-	<p>name<input class="form-control" type = "text" name = "name" style='width: 100%;' value='{{eresult["name"]}}' 
+	<p>Roll No<input class="form-control" type = "text" name = "roll_no" style='width: 100%;' value='{{eresult["roll_no"]}}' /></p>
+	<p>Name<input class="form-control" type = "text" name = "name" style='width: 100%;' value='{{eresult["name"]}}'
 		maxlength="30" /></p>
-	<p>degree<input class="form-control" type = "text" name = "degree" style='width: 100%;' value='{{eresult["degree"]}}' maxlength="10" /></p>
-	<p>year<input class="form-control" type = "text" name = "year" style='width: 100%;' value='{{eresult["year"]}}' /></p>
-	<p>sex  &nbsp <input type="radio" name="sex" value="1" checked> Male  &nbsp
+	<p>Degree<input class="form-control" type = "text" name = "degree" style='width: 100%;' value='{{eresult["degree"]}}' maxlength="10" /></p>
+	<p>Year<input class="form-control" type = "text" name = "year" style='width: 100%;' value='{{eresult["year"]}}' /></p>
+	<p>Sex  &nbsp <input type="radio" name="sex" value="1" checked> Male  &nbsp
 				  <input type="radio" name="sex" value="0" > Female<br></p>
-	<p>phone<input class="form-control" type = "text" name = "phone" style='width: 100%;' value='{{eresult["phone"]}}' /></p>
-	<p>dob<input class="form-control" type = "date" name = "dob" style='width: 100%;' value='{{eresult["dob"]}}' /></p>
-	<p>address<input class="form-control" type = "text" name = "address" style='width: 100%;' value='{{eresult["address"]}}' maxlength="100" /></p>
+	<p>Phone<input class="form-control" type = "text" name = "phone" style='width: 100%;' value='{{eresult["phone"]}}' /></p>
+	<p>DOB<input class="form-control" type = "date" name = "dob" style='width: 100%;' value='{{eresult["dob"]}}' /></p>
+	<p>Address<input class="form-control" type = "text" name = "address" style='width: 100%;' value='{{eresult["address"]}}' maxlength="100" /></p>
 	<p><input type = "hidden" name = "old_roll_no" value='{{eresult["roll_no"]}}' /></p>
 {% endfor %}
 
@@ -35,15 +35,15 @@
   </div>
 
   <form action = "students_insert" method = "POST">
-	<p>roll_no: <input class="form-control" type = "text" name = "roll_no" style='width: 100%;'/></p>
-	<p>name: <input class="form-control" type = "text" name = "name" style='width: 100%;' maxlength="30" /></p>
-	<p>degree: <input class="form-control" type = "text" name = "degree" style='width: 100%;' maxlength="10"/></p>
-	<p>year: <input class="form-control" type = "text" name = "year" style='width: 100%;'/></p>
-	<p>sex  &nbsp <input type="radio" name="sex" value="1" checked> Male  &nbsp
+	<p>Roll No: <input class="form-control" type = "text" name = "roll_no" style='width: 100%;' required/></p>
+	<p>Name: <input class="form-control" type = "text" name = "name" style='width: 100%;' maxlength="30" /></p>
+	<p>Degree: <input class="form-control" type = "text" name = "degree" style='width: 100%;' maxlength="10"/></p>
+	<p>Year: <input class="form-control" type = "text" name = "year" style='width: 100%;'/></p>
+	<p>Sex  &nbsp <input type="radio" name="sex" value="1" checked> Male  &nbsp
 		<input type="radio" name="sex" value="0" > Female<br></p>
-	<p>phone: <input class="form-control" type = "text" name = "phone" style='width: 100%;'/></p>
-	<p>dob: <input class="form-control" type = "date" name = "dob" style='width: 100%;'/></p>
-	<p>address: <input class="form-control" type = "text" name = "address" style='width: 100%;' maxlength="100"/></p>
+	<p>Phone: <input class="form-control" type = "text" name = "phone" style='width: 100%;'/></p>
+	<p>DOB: <input class="form-control" type = "date" name = "dob" style='width: 100%;'/></p>
+	<p>Address: <input class="form-control" type = "text" name = "address" style='width: 100%;' maxlength="100"/></p>
 	<p><input class="btn-primary" type = "submit" value = "Insert Data" /></p>
 </form>
 </div>
@@ -54,30 +54,30 @@
 
 {% block content2 %}
 
-<table class = 'table table-hover' style = 'margin-left: 100px; margin-right: 100px; width: 90%;'>
+<table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
  <thead>
   <tr>
-	<th>roll_no</th>
-	<th>name</th>
-	<th>degree</th>
-	<th>year</th>
-	<th>sex</th>
-	<th>phone</th>
-	<th>dob</th>
-	<th>address</th>
+	<th>Roll No</th>
+	<th>Name</th>
+	<th>Degree</th>
+	<th>Year</th>
+	<th>Sex</th>
+	<th>Phone</th>
+	<th>DOB</th>
+	<th>Address</th>
 </tr>
 </thead>
 
 {% for result in results %}
 <tr>
-<td>{{result["roll_no"]}}</td>"
-<td>{{result["name"]}}</td>"
-<td>{{result["degree"]}}</td>"
-<td>{{result["year"]}}</td>"
-<td>{{result["sex"]}}</td>"
-<td>{{result["phone"]}}</td>"
-<td>{{result["dob"]}}</td>"
-<td>{{result["address"]}}</td>"
+<td>{{result["roll_no"]}}</td>
+<td>{{result["name"]}}</td>
+<td>{{result["degree"]}}</td>
+<td>{{result["year"]}}</td>
+<td>{{result["sex"]}}</td>
+<td>{{result["phone"]}}</td>
+<td>{{result["dob"]}}</td>
+<td>{{result["address"]}}</td>
 <td align="center"><a href = "{{ url_for('students_edit1', roll_no=result['roll_no'])}}"><i class="fas fa-edit"></a></td>
    <td align="center"><a href = "{{ url_for('students_delete', roll_no=result['roll_no'])}}"><i class="fas fa-trash-alt"></a></td>
    </tr>

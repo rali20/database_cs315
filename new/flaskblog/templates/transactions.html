@@ -9,9 +9,9 @@
 
  {% for eresult in eresults %}
 <form action = "transactions_edit2" method = "POST">
-	<p>price_list_id<input class="form-control" type = "text" name = "price_list_id" style='width: 100%;' value='{{eresult["price_list_id"]}}' /></p>
-	<p>patient_id<input class="form-control" type = "text" name = "patient_id" style='width: 100%;' value='{{eresult["patient_id"]}}' /></p>
-	<p>quantity<input class="form-control" type = "text" name = "quantity" style='width: 100%;' value='{{eresult["quantity"]}}' /></p>
+	<p>Price List Id<input class="form-control" type = "text" name = "price_list_id" style='width: 100%;' value='{{eresult["price_list_id"]}}' /></p>
+	<p>Patient Id<input class="form-control" type = "text" name = "patient_id" style='width: 100%;' value='{{eresult["patient_id"]}}' /></p>
+	<p>Quantity<input class="form-control" type = "text" name = "quantity" style='width: 100%;' value='{{eresult["quantity"]}}' /></p>
 	<p><input type = "hidden" name = "old_price_list_id" value='{{eresult["price_list_id"]}}' /></p>
 {% endfor %}
 
@@ -28,9 +28,9 @@
   </div>
 
   <form action = "transactions_insert" method = "POST">
-	<p>price_list_id: <input class="form-control" type = "text" name = "price_list_id" style='width: 100%;'/></p>
-	<p>patient_id: <input class="form-control" type = "text" name = "patient_id" style='width: 100%;'/></p>
-	<p>quantity: <input class="form-control" type = "text" name = "quantity" style='width: 100%;'/></p>
+	<p>Price List Id: <input class="form-control" type = "text" name = "price_list_id" style='width: 100%;'/></p>
+	<p>Patient Id: <input class="form-control" type = "text" name = "patient_id" style='width: 100%;'/></p>
+	<p>Quantity: <input class="form-control" type = "text" name = "quantity" style='width: 100%;'/></p>
 	<p><input class="btn-primary" type = "submit" value = "Insert Data" /></p>
 </form>
 </div>
@@ -41,20 +41,20 @@
 
 {% block content2 %}
 
-<table class = 'table table-hover' style = 'margin-left: 100px; margin-right: 100px; width: 90%;'>
+<table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
  <thead>
   <tr>
-	<th>price_list_id</th>
-	<th>patient_id</th>
-	<th>quantity</th>
+	<th>Price List Id</th>
+	<th>Patient Id</th>
+	<th>Quantity</th>
 </tr>
 </thead>
 
 {% for result in results %}
 <tr>
-<td>{{result["price_list_id"]}}</td>"
-<td>{{result["patient_id"]}}</td>"
-<td>{{result["quantity"]}}</td>"
+<td>{{result["price_list_id"]}}</td>
+<td>{{result["patient_id"]}}</td>
+<td>{{result["quantity"]}}</td>
 <td align="center"><a href = "{{ url_for('transactions_edit1', price_list_id=result['price_list_id'])}}"><i class="fas fa-edit"></a></td>
    <td align="center"><a href = "{{ url_for('transactions_delete', price_list_id=result['price_list_id'])}}"><i class="fas fa-trash-alt"></a></td>
    </tr>

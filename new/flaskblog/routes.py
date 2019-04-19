@@ -98,7 +98,7 @@ def doctors_delete():
         sql_insert_edit_delete(query)
     results = sql_query('SELECT * FROM doctors')
     return render_template('doctors.html', results=results, page="Doctors")
- 
+
 @app.route('/doctors_edit1',methods = ['POST', 'GET']) #this is when user clicks edit link
 @login_required
 def doctors_edit1():
@@ -286,7 +286,7 @@ def price_list_insert():
         category = request.form['category']
         price = request.form['price']
         desc = request.form['desc']
-        query = 'INSERT INTO price_list VALUES ({},{},{},{})'.format(price_list_id,category,price,desc)
+        query = 'INSERT INTO price_list VALUES ({},{},{},"{}")'.format(price_list_id,category,price,desc)
         sql_insert_edit_delete(query)
     results = sql_query('SELECT * FROM price_list')
     return render_template('price_list.html', results=results, page="Price List")
@@ -1402,4 +1402,3 @@ def transactions_edit2():
         sql_insert_edit_delete(query)
     results = sql_query('SELECT * FROM transactions')
     return render_template('transactions.html', results=results, page="Patient Transactions")
-

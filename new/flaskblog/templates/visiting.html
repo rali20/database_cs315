@@ -9,10 +9,10 @@
 
  {% for eresult in eresults %}
 <form action = "visiting_edit2" method = "POST">
-	<p>time_in<input class="form-control" type = "time" name = "time_in" style='width: 100%;' value='{{eresult["time_in"]}}' /></p>
-	<p>time_out<input class="form-control" type = "time" name = "time_out" style='width: 100%;' value='{{eresult["time_out"]}}' /></p>
-	<p>patient_id<input class="form-control" type = "text" name = "patient_id" style='width: 100%;' value='{{eresult["patient_id"]}}' /></p>
-	<p>visitor_id<input class="form-control" type = "text" name = "visitor_id" style='width: 100%;' value='{{eresult["visitor_id"]}}' /></p>
+	<p>Time In<input class="form-control" type = "time" name = "time_in" style='width: 100%;' value='{{eresult["time_in"]}}' /></p>
+	<p>Time Out<input class="form-control" type = "time" name = "time_out" style='width: 100%;' value='{{eresult["time_out"]}}' /></p>
+	<p>Patient Id<input class="form-control" type = "text" name = "patient_id" style='width: 100%;' value='{{eresult["patient_id"]}}' /></p>
+	<p>Visitor Id<input class="form-control" type = "text" name = "visitor_id" style='width: 100%;' value='{{eresult["visitor_id"]}}' /></p>
 	<p><input type = "hidden" name = "old_time_in" value='{{eresult["time_in"]}}' /></p>
 	<p><input type = "hidden" name = "old_time_out" value='{{eresult["time_out"]}}' /></p>
 	<p><input type = "hidden" name = "old_patient_id" value='{{eresult["patient_id"]}}' /></p>
@@ -32,10 +32,10 @@
   </div>
 
   <form action = "visiting_insert" method = "POST">
-	<p>time_in: <input class="form-control" type = "time" name = "time_in" style='width: 100%;'/></p>
-	<p>time_out: <input class="form-control" type = "time" name = "time_out" style='width: 100%;'/></p>
-	<p>patient_id: <input class="form-control" type = "text" name = "patient_id" style='width: 100%;'/></p>
-	<p>visitor_id: <input class="form-control" type = "text" name = "visitor_id" style='width: 100%;'/></p>
+	<p>Time In: <input class="form-control" type = "time" name = "time_in" style='width: 100%;'/></p>
+	<p>Time Out: <input class="form-control" type = "time" name = "time_out" style='width: 100%;'/></p>
+	<p>Patient Id: <input class="form-control" type = "text" name = "patient_id" style='width: 100%;'/></p>
+	<p>Visitor Id: <input class="form-control" type = "text" name = "visitor_id" style='width: 100%;'/></p>
 	<p><input class="btn-primary" type = "submit" value = "Insert Data" /></p>
 </form>
 </div>
@@ -46,22 +46,22 @@
 
 {% block content2 %}
 
-<table class = 'table table-hover' style = 'margin-left: 100px; margin-right: 100px; width: 90%;'>
+<table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
  <thead>
   <tr>
-	<th>time_in</th>
-	<th>time_out</th>
-	<th>patient_id</th>
-	<th>visitor_id</th>
+	<th>Time In</th>
+	<th>Time Out</th>
+	<th>Patient Id</th>
+	<th>Visitor Id</th>
 </tr>
 </thead>
 
 {% for result in results %}
 <tr>
-<td>{{result["time_in"]}}</td>"
-<td>{{result["time_out"]}}</td>"
-<td>{{result["patient_id"]}}</td>"
-<td>{{result["visitor_id"]}}</td>"
+<td>{{result["time_in"]}}</td>
+<td>{{result["time_out"]}}</td>
+<td>{{result["patient_id"]}}</td>
+<td>{{result["visitor_id"]}}</td>
 <td align="center"><a href = "{{ url_for('visiting_edit1', time_in=result['time_in'], time_out=result['time_out'], patient_id=result['patient_id'], visitor_id=result['visitor_id'])}}"><i class="fas fa-edit"></a></td>
    <td align="center"><a href = "{{ url_for('visiting_delete', time_in=result['time_in'], time_out=result['time_out'], patient_id=result['patient_id'], visitor_id=result['visitor_id'])}}"><i class="fas fa-trash-alt"></a></td>
    </tr>

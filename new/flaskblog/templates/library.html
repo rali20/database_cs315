@@ -9,10 +9,10 @@
 
  {% for eresult in eresults %}
 <form action = "library_edit2" method = "POST">
-	<p>book_id<input class="form-control" type = "text" name = "book_id" style='width: 100%;' value='{{eresult["book_id"]}}' /></p>
-	<p>book_name<input class="form-control" type = "text" name = "book_name" style='width: 100%;' value='{{eresult["book_name"]}}' maxlength="30" /></p>
-	<p>edition<input class="form-control" type = "text" name = "edition" style='width: 100%;' value='{{eresult["edition"]}}' /></p>
-	<p>quantity<input class="form-control" type = "text" name = "quantity" style='width: 100%;' value='{{eresult["quantity"]}}' /></p>
+	<p>Book Id<input class="form-control" type = "text" name = "book_id" style='width: 100%;' value='{{eresult["book_id"]}}' /></p>
+	<p>Book Name<input class="form-control" type = "text" name = "book_name" style='width: 100%;' value='{{eresult["book_name"]}}' maxlength="30" /></p>
+	<p>Edition<input class="form-control" type = "text" name = "edition" style='width: 100%;' value='{{eresult["edition"]}}' /></p>
+	<p>Quantity<input class="form-control" type = "text" name = "quantity" style='width: 100%;' value='{{eresult["quantity"]}}' /></p>
 	<p><input type = "hidden" name = "old_book_id" value='{{eresult["book_id"]}}' /></p>
 {% endfor %}
 
@@ -29,11 +29,11 @@
   </div>
 
   <form action = "library_insert" method = "POST">
-	<p>book_id: <input class="form-control" type = "text" name = "book_id" style='width: 100%;'/></p>
-	<p>book_name: <input class="form-control" type = "text" name = "book_name" style='width: 100%;' 
+	<p>Book Id: <input class="form-control" type = "text" name = "book_id" style='width: 100%;'/></p>
+	<p>Book Name: <input class="form-control" type = "text" name = "book_name" style='width: 100%;' 
 		maxlength="30" /></p>
-	<p>edition: <input class="form-control" type = "text" name = "edition" style='width: 100%;'/></p>
-	<p>quantity: <input class="form-control" type = "text" name = "quantity" style='width: 100%;'/></p>
+	<p>Edition: <input class="form-control" type = "text" name = "edition" style='width: 100%;'/></p>
+	<p>Quantity: <input class="form-control" type = "text" name = "quantity" style='width: 100%;'/></p>
 	<p><input class="btn-primary" type = "submit" value = "Insert Data" /></p>
 </form>
 </div>
@@ -44,22 +44,22 @@
 
 {% block content2 %}
 
-<table class = 'table table-hover' style = 'margin-left: 100px; margin-right: 100px; width: 90%;'>
+<table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
  <thead>
   <tr>
-	<th>book_id</th>
-	<th>book_name</th>
-	<th>edition</th>
-	<th>quantity</th>
+	<th>Book Id</th>
+	<th>Book Name</th>
+	<th>Edition</th>
+	<th>Quantity</th>
 </tr>
 </thead>
 
 {% for result in results %}
 <tr>
-<td>{{result["book_id"]}}</td>"
-<td>{{result["book_name"]}}</td>"
-<td>{{result["edition"]}}</td>"
-<td>{{result["quantity"]}}</td>"
+<td>{{result["book_id"]}}</td>
+<td>{{result["book_name"]}}</td>
+<td>{{result["edition"]}}</td>
+<td>{{result["quantity"]}}</td>
 <td align="center"><a href = "{{ url_for('library_edit1', book_id=result['book_id'])}}"><i class="fas fa-edit"></a></td>
    <td align="center"><a href = "{{ url_for('library_delete', book_id=result['book_id'])}}"><i class="fas fa-trash-alt"></a></td>
    </tr>

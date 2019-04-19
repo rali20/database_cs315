@@ -9,13 +9,13 @@
 
  {% for eresult in eresults %}
 <form action = "visitor_edit2" method = "POST">
-	<p>visitor_id<input class="form-control" type = "text" name = "visitor_id" style='width: 100%;' value='{{eresult["visitor_id"]}}' /></p>
-	<p>name<input class="form-control" type = "text" name = "name" style='width: 100%;' value='{{eresult["name"]}}' 
+	<p>Visitor Id<input class="form-control" type = "text" name = "visitor_id" style='width: 100%;' value='{{eresult["visitor_id"]}}' /></p>
+	<p>Name<input class="form-control" type = "text" name = "name" style='width: 100%;' value='{{eresult["name"]}}' 
 		maxlength="30"/></p>
-	<p>phone<input class="form-control" type = "text" name = "phone" style='width: 100%;' value='{{eresult["phone"]}}' /></p>
-	<p>sex  &nbsp <input type="radio" name="sex" value="1" checked> Male  &nbsp
+	<p>Phone<input class="form-control" type = "text" name = "phone" style='width: 100%;' value='{{eresult["phone"]}}' /></p>
+	<p>Sex  &nbsp <input type="radio" name="sex" value="1" checked> Male  &nbsp
 				  <input type="radio" name="sex" value="0" > Female<br></p>	
-	<p>age<input class="form-control" type = "text" name = "age" style='width: 100%;' value='{{eresult["age"]}}' /></p>
+	<p>Age<input class="form-control" type = "text" name = "age" style='width: 100%;' value='{{eresult["age"]}}' /></p>
 	<p><input type = "hidden" name = "old_visitor_id" value='{{eresult["visitor_id"]}}' /></p>
 {% endfor %}
 
@@ -32,12 +32,12 @@
   </div>
 
   <form action = "visitor_insert" method = "POST">
-	<p>visitor_id: <input class="form-control" type = "text" name = "visitor_id" style='width: 100%;'/></p>
-	<p>name: <input class="form-control" type = "text" name = "name" style='width: 100%;' maxlength="30"/></p>
-	<p>phone: <input class="form-control" type = "text" name = "phone" style='width: 100%;'/></p>
-	<p>sex  &nbsp <input type="radio" name="sex" value="1" checked> Male  &nbsp
+	<p>Visitor Id: <input class="form-control" type = "text" name = "visitor_id" style='width: 100%;'/></p>
+	<p>Name: <input class="form-control" type = "text" name = "name" style='width: 100%;' maxlength="30"/></p>
+	<p>Phone: <input class="form-control" type = "text" name = "phone" style='width: 100%;'/></p>
+	<p>Sex  &nbsp <input type="radio" name="sex" value="1" checked> Male  &nbsp
 		<input type="radio" name="sex" value="0" > Female<br></p>
-	<p>age: <input class="form-control" type = "text" name = "age" style='width: 100%;'/></p>
+	<p>Age: <input class="form-control" type = "text" name = "age" style='width: 100%;'/></p>
 	<p><input class="btn-primary" type = "submit" value = "Insert Data" /></p>
 </form>
 </div>
@@ -48,24 +48,24 @@
 
 {% block content2 %}
 
-<table class = 'table table-hover' style = 'margin-left: 100px; margin-right: 100px; width: 90%;'>
+<table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
  <thead>
   <tr>
-	<th>visitor_id</th>
-	<th>name</th>
-	<th>phone</th>
-	<th>sex</th>
-	<th>age</th>
+	<th>Visitor Id</th>
+	<th>Name</th>
+	<th>Phone</th>
+	<th>Sex</th>
+	<th>Age</th>
 </tr>
 </thead>
 
 {% for result in results %}
 <tr>
-<td>{{result["visitor_id"]}}</td>"
-<td>{{result["name"]}}</td>"
-<td>{{result["phone"]}}</td>"
-<td>{{result["sex"]}}</td>"
-<td>{{result["age"]}}</td>"
+<td>{{result["visitor_id"]}}</td>
+<td>{{result["name"]}}</td>
+<td>{{result["phone"]}}</td>
+<td>{{result["sex"]}}</td>
+<td>{{result["age"]}}</td>
 <td align="center"><a href = "{{ url_for('visitor_edit1', visitor_id=result['visitor_id'])}}"><i class="fas fa-edit"></a></td>
    <td align="center"><a href = "{{ url_for('visitor_delete', visitor_id=result['visitor_id'])}}"><i class="fas fa-trash-alt"></a></td>
    </tr>

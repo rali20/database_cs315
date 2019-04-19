@@ -9,10 +9,10 @@
 
  {% for eresult in eresults %}
 <form action = "vendors_edit2" method = "POST">
-	<p>vendor_id<input class="form-control" type = "text" name = "vendor_id" style='width: 100%;' value='{{eresult["vendor_id"]}}' /></p>
-	<p>name<input class="form-control" type = "text" name = "name" style='width: 100%;' value='{{eresult["name"]}}' 
+	<p>Vendor Id<input class="form-control" type = "text" name = "vendor_id" style='width: 100%;' value='{{eresult["vendor_id"]}}' /></p>
+	<p>Name<input class="form-control" type = "text" name = "name" style='width: 100%;' value='{{eresult["name"]}}' 
     maxlength="30" /></p>
-	<p>phone<input class="form-control" type = "text" name = "phone" style='width: 100%;' value='{{eresult["phone"]}}' /></p>
+	<p>Phone<input class="form-control" type = "text" name = "phone" style='width: 100%;' value='{{eresult["phone"]}}' /></p>
 	<p><input type = "hidden" name = "old_vendor_id" value='{{eresult["vendor_id"]}}' /></p>
 {% endfor %}
 
@@ -29,9 +29,9 @@
   </div>
 
   <form action = "vendors_insert" method = "POST">
-	<p>vendor_id: <input class="form-control" type = "text" name = "vendor_id" style='width: 100%;'/></p>
-	<p>name: <input class="form-control" type = "text" name = "name" style='width: 100%;' maxlength="30" /></p>
-	<p>phone: <input class="form-control" type = "text" name = "phone" style='width: 100%;'/></p>
+	<p>Vendor Id: <input class="form-control" type = "text" name = "vendor_id" style='width: 100%;'/></p>
+	<p>Name: <input class="form-control" type = "text" name = "name" style='width: 100%;' maxlength="30" /></p>
+	<p>Phone: <input class="form-control" type = "text" name = "phone" style='width: 100%;'/></p>
 	<p><input class="btn-primary" type = "submit" value = "Insert Data" /></p>
 </form>
 </div>
@@ -42,20 +42,20 @@
 
 {% block content2 %}
 
-<table class = 'table table-hover' style = 'margin-left: 100px; margin-right: 100px; width: 90%;'>
+<table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
  <thead>
   <tr>
-	<th>vendor_id</th>
-	<th>name</th>
-	<th>phone</th>
+	<th>Vendor Id</th>
+	<th>Name</th>
+	<th>Phone</th>
 </tr>
 </thead>
 
 {% for result in results %}
 <tr>
-<td>{{result["vendor_id"]}}</td>"
-<td>{{result["name"]}}</td>"
-<td>{{result["phone"]}}</td>"
+<td>{{result["vendor_id"]}}</td>
+<td>{{result["name"]}}</td>
+<td>{{result["phone"]}}</td>
 <td align="center"><a href = "{{ url_for('vendors_edit1', vendor_id=result['vendor_id'])}}"><i class="fas fa-edit"></a></td>
    <td align="center"><a href = "{{ url_for('vendors_delete', vendor_id=result['vendor_id'])}}"><i class="fas fa-trash-alt"></a></td>
    </tr>

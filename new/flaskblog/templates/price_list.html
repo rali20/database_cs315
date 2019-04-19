@@ -9,10 +9,10 @@
 
  {% for eresult in eresults %}
 <form action = "price_list_edit2" method = "POST">
-	<p>price_list_id<input class="form-control" type = "text" name = "price_list_id" style='width: 100%;' value='{{eresult["price_list_id"]}}' /></p>
-	<p>category<input class="form-control" type = "text" name = "category" style='width: 100%;' value='{{eresult["category"]}}' /></p>
-	<p>price<input class="form-control" type = "text" name = "price" style='width: 100%;' value='{{eresult["price"]}}' /></p>
-	<p>desc<input class="form-control" type = "text" name = "desc" style='width: 100%;' value='{{eresult["desc"]}}' maxlength="30" /></p>
+	<p>Price List Id<input class="form-control" type = "text" name = "price_list_id" style='width: 100%;' value='{{eresult["price_list_id"]}}' /></p>
+	<p>Category<input class="form-control" type = "text" name = "category" style='width: 100%;' value='{{eresult["category"]}}' /></p>
+	<p>Price<input class="form-control" type = "text" name = "price" style='width: 100%;' value='{{eresult["price"]}}' /></p>
+	<p>Description<input class="form-control" type = "text" name = "desc" style='width: 100%;' value='{{eresult["desc"]}}' maxlength="30" /></p>
 	<p><input type = "hidden" name = "old_price_list_id" value='{{eresult["price_list_id"]}}' /></p>
 {% endfor %}
 
@@ -29,10 +29,10 @@
   </div>
 
   <form action = "price_list_insert" method = "POST">
-	<p>price_list_id: <input class="form-control" type = "text" name = "price_list_id" style='width: 100%;'/></p>
-	<p>category: <input class="form-control" type = "text" name = "category" style='width: 100%;'/></p>
-	<p>price: <input class="form-control" type = "text" name = "price" style='width: 100%;'/></p>
-	<p>desc: <input class="form-control" type = "text" name = "desc" style='width: 100%;'
+	<p>Price List Id: <input class="form-control" type = "text" name = "price_list_id" style='width: 100%;'/></p>
+	<p>Category: <input class="form-control" type = "text" name = "category" style='width: 100%;'/></p>
+	<p>Price: <input class="form-control" type = "text" name = "price" style='width: 100%;'/></p>
+	<p>Description: <input class="form-control" type = "text" name = "desc" style='width: 100%;'
 		maxlength="30" /></p>
 	<p><input class="btn-primary" type = "submit" value = "Insert Data" /></p>
 </form>
@@ -44,22 +44,22 @@
 
 {% block content2 %}
 
-<table class = 'table table-hover' style = 'margin-left: 100px; margin-right: 100px; width: 90%;'>
+<table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
  <thead>
   <tr>
-	<th>price_list_id</th>
-	<th>category</th>
-	<th>price</th>
-	<th>desc</th>
+	<th>Price List Id</th>
+	<th>Category</th>
+	<th>Price</th>
+	<th>Description</th>
 </tr>
 </thead>
 
 {% for result in results %}
 <tr>
-<td>{{result["price_list_id"]}}</td>"
-<td>{{result["category"]}}</td>"
-<td>{{result["price"]}}</td>"
-<td>{{result["desc"]}}</td>"
+<td>{{result["price_list_id"]}}</td>
+<td>{{result["category"]}}</td>
+<td>{{result["price"]}}</td>
+<td>{{result["desc"]}}</td>
 <td align="center"><a href = "{{ url_for('price_list_edit1', price_list_id=result['price_list_id'])}}"><i class="fas fa-edit"></a></td>
    <td align="center"><a href = "{{ url_for('price_list_delete', price_list_id=result['price_list_id'])}}"><i class="fas fa-trash-alt"></a></td>
    </tr>

@@ -9,10 +9,10 @@
 
  {% for eresult in eresults %}
 <form action = "dept_edit2" method = "POST">
-	<p>dept_id<input class="form-control" type = "text" name = "dept_id" style='width: 100%;' value='{{eresult["dept_id"]}}' /></p>
-	<p>name<input class="form-control" type = "text" name = "name" style='width: 100%;' value='{{eresult["name"]}}' 
+	<p>Department Id<input class="form-control" type = "text" name = "dept_id" style='width: 100%;' value='{{eresult["dept_id"]}}' /></p>
+	<p>Name<input class="form-control" type = "text" name = "name" style='width: 100%;' value='{{eresult["name"]}}' 
   maxlength="30" /></p>
-	<p>doctor_id<input class="form-control" type = "text" name = "doctor_id" style='width: 100%;' value='{{eresult["doctor_id"]}}' /></p>
+	<p>Doctor Id<input class="form-control" type = "text" name = "doctor_id" style='width: 100%;' value='{{eresult["doctor_id"]}}' /></p>
 	<p><input type = "hidden" name = "old_dept_id" value='{{eresult["dept_id"]}}' /></p>
 {% endfor %}
 
@@ -29,9 +29,9 @@
   </div>
 
   <form action = "dept_insert" method = "POST">
-	<p>dept_id: <input class="form-control" type = "text" name = "dept_id" style='width: 100%;'/></p>
-	<p>name: <input class="form-control" type = "text" name = "name" style='width: 100%;' maxlength="30"/></p>
-	<p>doctor_id: <input class="form-control" type = "text" name = "doctor_id" style='width: 100%;'/></p>
+	<p>Department Id: <input class="form-control" type = "text" name = "dept_id" style='width: 100%;'/></p>
+	<p>Name: <input class="form-control" type = "text" name = "name" style='width: 100%;' maxlength="30"/></p>
+	<p>Doctor Id: <input class="form-control" type = "text" name = "doctor_id" style='width: 100%;'/></p>
 	<p><input class="btn-primary" type = "submit" value = "Insert Data" /></p>
 </form>
 </div>
@@ -42,20 +42,20 @@
 
 {% block content2 %}
 
-<table class = 'table table-hover' style = 'margin-left: 100px; margin-right: 100px; width: 90%;'>
+<table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
  <thead>
   <tr>
-	<th>dept_id</th>
-	<th>name</th>
-	<th>doctor_id</th>
+	<th>Department Id</th>
+	<th>Name</th>
+	<th>Doctor Id</th>
 </tr>
 </thead>
 
 {% for result in results %}
 <tr>
-<td>{{result["dept_id"]}}</td>"
-<td>{{result["name"]}}</td>"
-<td>{{result["doctor_id"]}}</td>"
+<td>{{result["dept_id"]}}</td>
+<td>{{result["name"]}}</td>
+<td>{{result["doctor_id"]}}</td>
 <td align="center"><a href = "{{ url_for('dept_edit1', dept_id=result['dept_id'])}}"><i class="fas fa-edit"></a></td>
    <td align="center"><a href = "{{ url_for('dept_delete', dept_id=result['dept_id'])}}"><i class="fas fa-trash-alt"></a></td>
    </tr>
